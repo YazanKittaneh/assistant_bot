@@ -1,7 +1,7 @@
 'use strict'
 const http = require('http')
 const Bot = require('messenger-bot')
-var later = require('later');
+var later = require('later'); //https://bunkat.github.io/later/
 
 let bot = new Bot({
   token: 'EAAW7z3FpocsBAIzOF097duuMqD3nyZCLf6c60jwdRW6HnAmIt2BZAJEPOWvzNhVReZAwDdnuMaQzAbZCkqb7lZC94c2VOhfDMsdnpaOXkYxnFcVXEhTrrz6XuGzDuC1yzTvn9LpGYhfDZAZApsxomPOLiJaPQUnOFDaIUBtJAEFrgZDZD',
