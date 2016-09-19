@@ -1,6 +1,7 @@
 'use strict'
 const http = require('http')
 const Bot = require('messenger-bot')
+var later = require('later');
 
 let bot = new Bot({
   token: 'EAAW7z3FpocsBAIzOF097duuMqD3nyZCLf6c60jwdRW6HnAmIt2BZAJEPOWvzNhVReZAwDdnuMaQzAbZCkqb7lZC94c2VOhfDMsdnpaOXkYxnFcVXEhTrrz6XuGzDuC1yzTvn9LpGYhfDZAZApsxomPOLiJaPQUnOFDaIUBtJAEFrgZDZD',
@@ -16,13 +17,13 @@ bot.on('message', (payload, reply) => {
   let text = payload.message.text
 
   if (text == "remind me"){
-    setTimeout(function(){
-      return reply({text: "ok here's your reminder"})
-    }, 3000);
-    return reply({text: 'Sure thing boss'})
+    var textSched = later.parse.text('5 sec');
+    reply({text: 'Sure thing boss'})
+    later.setTimeout(reply({text: "here's your reminder: "+text}),
+     textSched);
   }
   else {
-    return reply({text: 'judith suxxx'})
+    return reply({text: 'Sorry, I didn\'t quite get that'})
   }
   /* create element for the reply buttons
   let element = {
