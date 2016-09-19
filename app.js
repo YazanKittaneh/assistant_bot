@@ -15,11 +15,14 @@ bot.on('error', (err) => {
 bot.on('message', (payload, reply) => {
   let text = payload.message.text
 
-  if (text == "set up a reminder for me"){
-    return reply({text: 'Sure, what do you want reminded?'})
+  if (text == "remind me"){
+    setTimeout(function(){
+      return reply({text: "ok here's your reminder"})
+    }, 3000);
+    return reply({text: 'Sure thing boss'})
   }
   else {
-    return reply({text: 'lol wut? say that again plz'})
+    return reply({text: 'judith suxxx'})
   }
   /* create element for the reply buttons
   let element = {
@@ -30,7 +33,7 @@ bot.on('message', (payload, reply) => {
   }
   */
 
-  /* actually reply using the elms. Each elem will be a card. 
+  /* actually reply using the elms. Each elem will be a card.
   reply({
     attachment: {
       type: 'template',
